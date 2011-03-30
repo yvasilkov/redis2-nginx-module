@@ -58,19 +58,19 @@ ngx_http_redis2_process_single_line_reply(ngx_http_redis2_ctx_t *ctx,
 
     ctx->state = cs;
 
-    if (cs == single_line_reply_error) {
-
-        buf.data = b->last;
-        buf.len = bytes;
-
-        ngx_log_error(NGX_LOG_ERR, ctx->request->connection->log, 0,
-            "Redis server returns invalid response at %z near "
-            "\"%V\"",
-                (ssize_t) ((u_char *) p - b->pos),
-            &buf);
-
-        return NGX_HTTP_INTERNAL_SERVER_ERROR;
-    }
+//    if (cs == single_line_reply_error) {
+//
+//        buf.data = b->last;
+//        buf.len = bytes;
+//
+//        ngx_log_error(NGX_LOG_ERR, ctx->request->connection->log, 0,
+//            "Redis server returns invalid response at %z near "
+//            "\"%V\"",
+//                (ssize_t) ((u_char *) p - b->pos),
+//            &buf);
+//
+//        return NGX_HTTP_INTERNAL_SERVER_ERROR;
+//    }
 
     rc = ngx_http_redis2_output_buf(ctx, b->last, (u_char *) p - b->last);
     if (rc != NGX_OK) {
