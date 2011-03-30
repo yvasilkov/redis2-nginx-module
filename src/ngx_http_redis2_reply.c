@@ -53,7 +53,7 @@ ngx_http_redis2_process_single_line_reply(ngx_http_redis2_ctx_t *ctx,
 {
     ngx_buf_t                *b;
     ngx_http_upstream_t      *u;
-    ngx_str_t                 buf;
+//     ngx_str_t                 buf;
     ngx_int_t                 rc;
     ngx_flag_t                done = 0;
 
